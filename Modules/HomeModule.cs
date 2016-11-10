@@ -5,7 +5,9 @@ namespace TapcoApiApplication
     {
         public HomeModule()
         {
-            Get("/", args => "Hallo Tapco!");
+            Get("/", args => {
+                return Response.AsJson(new Message() { text = "Hallo Tapco!" });
+            });
         }
     }
 }
